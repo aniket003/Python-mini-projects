@@ -1,5 +1,14 @@
-import dis
 import random
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
+
 word_list =[ "PIZZA","BURGER","SPRINGROLLS","NOODLES","ICECREAM","CHOCOLATE"]
 stages = ['''
   +---+
@@ -63,13 +72,11 @@ end_of_game = False
 wrong=6
 display=[]
 Won= False
+print(logo)
 
 for i in range(word_len):
     display += '_'
-    
 print(display)
-
-
 
 while not end_of_game:
     guess = input('Guess a letter :').upper()
@@ -82,7 +89,9 @@ while not end_of_game:
             if(display[position] == '_'): 
                 display[position] = guess
                 correct = True
-            else: break
+            else:
+                print('Already Guessed')
+                correct = True
                     
     if(correct):
         print(display)
@@ -93,11 +102,11 @@ while not end_of_game:
         
     if(wrong == 0):
         print(stages[0])
-        print('Lost! You let him hanged')
+        print('Lost! You Hanged The Man')
         break
     elif("_" not in display): 
         end_of_game = True
-        print('Won! You saved the person')
+        print('Won! You Saved The Man')
         break
     
     
