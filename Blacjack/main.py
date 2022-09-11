@@ -1,7 +1,6 @@
 from art import logo
 import random
 print(logo)
-
 #function to return random cards
 def draw_Card():
     """Returns a Random Card"""
